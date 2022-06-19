@@ -27,9 +27,12 @@ body {
 	height: 100vh;
 }
 
-main {
-	min-width: 300px;
+.card {
+	width: 300px;
+	height: 520px;
 	margin: 0 2em;
+	border-radius: 3em;
+	box-shadow: 0px 20px 24px 0px rgba(66, 68, 90, 1);
 }
 
 .image {
@@ -56,8 +59,13 @@ main {
 	display: none;
 }
 
+.orange-box {
+	display: none;
+}
+
 .accordion {
 	font-size: 1rem;
+	height: 420px;
 	background-color: #fff;
 	padding-bottom: 3em;
 	border-bottom-left-radius: 2em;
@@ -96,17 +104,28 @@ h1 {
 }
 
 .accordion-btn:focus {
-	font-weight: 700;
+	/* font-weight: bold; */
 	outline: none;
 }
 
-.accordion-btn img {
+.arrow-icon {
 	height: 10%;
+	transition: transform 0.3s;
 }
+
+/* .accordion-btn:active {
+	transition: transform 0.3s;
+	transform: rotate(180deg);
+} */
+
+/* .rotate {
+	transform: rotate(180deg);
+} */
 
 .accordion-info {
 	display: none;
-	margin-right: 5em;
+	margin-right: 2em;
+	transition: all 1s;
 }
 
 .active {
@@ -120,13 +139,32 @@ h1 {
 
 footer {
 	text-align: center;
-	margin-top: 1em;
+	margin-top: 2em;
 }
 
 @media (min-width: 768px) {
-	main {
+	.card {
+		position: relative;
 		display: flex;
 		flex-direction: row;
+		height: 400px;
+		width: 680px;
+		box-shadow: 0px 20px 24px 0px rgba(66, 68, 90, 1);
+	}
+
+	.card::after {
+		position: absolute;
+		content: '';
+		width: 130px;
+		height: 130px;
+		left: -6.2em;
+		top: 15em;
+		background-image: url('../images/illustration-box-desktop.svg');
+		background-size: 100%;
+		background-repeat: no-repeat;
+		animation-name: move-updown;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
 	}
 
 	.image {
@@ -138,7 +176,7 @@ footer {
 		border-bottom-left-radius: 2em;
 		background-image: url('../images/bg-pattern-desktop.svg');
 		background-size: 170%;
-		background-position: -335px -150px;
+		background-position: -29.5em -13em;
 		overflow: hidden;
 	}
 
@@ -150,11 +188,12 @@ footer {
 		display: block;
 		position: relative;
 		width: 100%;
-		left: -70px;
+		left: -6em;
 		transform: translateY(20%);
 	}
 
 	.accordion {
+		height: auto;
 		border-top-right-radius: 2em;
 		border-bottom-right-radius: 2em;
 		border-bottom-left-radius: 0em;
@@ -168,5 +207,19 @@ footer {
 
 	.accordion-box {
 		margin-right: 4em;
+	}
+}
+
+@keyframes move-updown {
+	0% {
+		left: -6.2em;
+	}
+
+	50% {
+		left: -7.5em;
+	}
+
+	100% {
+		left: -6.2em;
 	}
 }
