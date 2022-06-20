@@ -43,7 +43,7 @@ Below is my thinking process of Java Script code:
 
 ### What I learned
 
-I struggled to do this challenge in 15 hours. I had a really hard times with javascript, images and toggling accordeon with arrow. I learned A LOT (css selectors, ::after pseudoelement), but I still think this challenge was hard. I didn't like that bold font on button focus, so I decided to not code it.
+I struggled to do this challenge in 15 hours. I had a really hard times with javascript, images and toggling accordeon with arrow. I learned A LOT (css selectors, ::after pseudoelement), but I still think this challenge was hard. I didn't like that bold font on button focus, so I decided to not code it. I added small animation on my orange box while desktop view. 
 
 ## Author
 
