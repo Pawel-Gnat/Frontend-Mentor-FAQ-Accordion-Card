@@ -1,15 +1,4 @@
-const accordion = document.querySelector('.accordion')
 const accordionBtns = document.querySelectorAll('.accordion-btn')
-
-// function openAccordionItems() {
-// 	// function adds/removes class active
-// 	if (this.nextElementSibling.classList.contains('active')) {
-// 		this.nextElementSibling.classList.remove('active')
-// 	} else {
-// 		closeAccordionItems()
-// 		this.nextElementSibling.classList.toggle('active')
-// 	}
-// }
 
 function openAccordionItems() {
 	// function adds/removes class active
@@ -24,9 +13,10 @@ function openAccordionItems() {
 }
 
 const closeAccordionItems = () => {
-	// function search and remove an active class from accordion
-	const AllActiveItems = document.querySelectorAll('.accordion-info')
-	AllActiveItems.forEach(item => item.classList.remove('active'))
+	// function search and remove an active class from accordion and arrow
+	const allActiveItems = document.querySelectorAll('.accordion-info')
+	allActiveItems.forEach(item => item.classList.remove('active'))
+	accordionBtns.forEach(arrow => arrow.classList.remove('active'))
 }
 
 const clickOutsideAccordion = e => {
