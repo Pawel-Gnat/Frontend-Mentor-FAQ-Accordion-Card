@@ -1,13 +1,25 @@
 const accordion = document.querySelector('.accordion')
 const accordionBtns = document.querySelectorAll('.accordion-btn')
 
+// function openAccordionItems() {
+// 	// function adds/removes class active
+// 	if (this.nextElementSibling.classList.contains('active')) {
+// 		this.nextElementSibling.classList.remove('active')
+// 	} else {
+// 		closeAccordionItems()
+// 		this.nextElementSibling.classList.toggle('active')
+// 	}
+// }
+
 function openAccordionItems() {
 	// function adds/removes class active
-	if (this.nextElementSibling.classList.contains('active')) {
+	if (this.classList.contains('active')) {
+		this.classList.remove('active')
 		this.nextElementSibling.classList.remove('active')
 	} else {
 		closeAccordionItems()
-		this.nextElementSibling.classList.toggle('active')
+		this.classList.add('active')
+		this.nextElementSibling.classList.add('active')
 	}
 }
 
@@ -17,7 +29,7 @@ const closeAccordionItems = () => {
 	AllActiveItems.forEach(item => item.classList.remove('active'))
 }
 
-const ClickOutsideAccordion = e => {
+const clickOutsideAccordion = e => {
 	// function close accordion if I target element that is not an accordion item
 	if (e.target.classList.contains('accordion-btn') || e.target.classList.contains('accordion-text')) {
 		return
@@ -27,4 +39,4 @@ const ClickOutsideAccordion = e => {
 
 accordionBtns.forEach(btn => btn.addEventListener('click', openAccordionItems))
 
-window.addEventListener('click', ClickOutsideAccordion)
+window.addEventListener('click', clickOutsideAccordion)

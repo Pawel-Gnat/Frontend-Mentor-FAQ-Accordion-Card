@@ -110,27 +110,30 @@ h1 {
 
 .arrow-icon {
 	height: 10%;
-	transition: transform 0.3s;
+	transition: rotate 0.3s;
 }
 
-/* .accordion-btn:active {
-	transition: transform 0.3s;
-	transform: rotate(180deg);
-} */
+.active .arrow-icon {
+	rotate: 180deg;
+}
 
-/* .rotate {
+/* [aria-expanded=true] .arrow-icon {
 	transform: rotate(180deg);
-} */
+  } */
 
 .accordion-info {
 	display: none;
 	margin-right: 2em;
-	transition: all 1s;
+	/* transition: all 1s; */
 }
 
-.active {
-	display: block;
-}
+/* .active {
+	display: block;	
+} */
+
+.active .accordion-info {
+	display: block;	
+} 
 
 .accordion-text {
 	font-size: 0.7rem;
